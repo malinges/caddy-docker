@@ -1,7 +1,7 @@
-FROM alpine:3.4
-MAINTAINER Abiola Ibrahim <abiola89@gmail.com>
+FROM hypriot/rpi-alpine-scratch:latest
+MAINTAINER Eloy Lopez <elswork@gmail.com>
 
-LABEL caddy_version="0.9.3" architecture="amd64"
+LABEL caddy_version="0.9.3" architecture="arm"
 
 ARG plugins=git
 
@@ -9,7 +9,7 @@ RUN apk add --no-cache openssh-client git tar curl
 
 RUN curl --silent --show-error --fail --location \
       --header "Accept: application/tar+gzip, application/x-gzip, application/octet-stream" -o - \
-      "https://caddyserver.com/download/build?os=linux&arch=amd64&features=${plugins}" \
+      "https://caddyserver.com/download/build?os=linux&arch=arm&features=${plugins}" \
     | tar --no-same-owner -C /usr/bin/ -xz caddy \
  && chmod 0755 /usr/bin/caddy \
  && /usr/bin/caddy -version
