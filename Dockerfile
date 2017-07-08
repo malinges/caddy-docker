@@ -1,15 +1,16 @@
-FROM hypriot/rpi-alpine-scratch:latest
+FROM arm32v6/alpine:latest
 MAINTAINER Eloy Lopez <elswork@gmail.com>
 
-LABEL caddy_version="0.9.3" architecture="arm"
+LABEL caddy_version="0.10.4" architecture="arm6"
 
-ARG plugins=git
+ARG plugins=http.git
 
 RUN apk add --no-cache openssh-client git tar curl
 
+# install caddy
 RUN curl --silent --show-error --fail --location \
       --header "Accept: application/tar+gzip, application/x-gzip, application/octet-stream" -o - \
-      "https://caddyserver.com/download/build?os=linux&arch=arm&features=${plugins}" \
+      "https://caddyserver.com/download/linux/arm6?plugins=${plugins}" \
     | tar --no-same-owner -C /usr/bin/ -xz caddy \
  && chmod 0755 /usr/bin/caddy \
  && /usr/bin/caddy -version
