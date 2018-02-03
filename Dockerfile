@@ -1,7 +1,7 @@
 FROM arm32v6/alpine:latest
 MAINTAINER Eloy Lopez <elswork@gmail.com>
 
-LABEL caddy_version="0.10.4" architecture="arm6"
+LABEL caddy_version="0.32.2" architecture="arm6"
 
 ARG plugins=http.git
 
