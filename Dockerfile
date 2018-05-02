@@ -1,7 +1,7 @@
 FROM alpine:3.7
 LABEL mantainer="Eloy Lopez <elswork@gmail.com>"
 
-LABEL caddy_version="0.10.12" architecture="arm7"
+LABEL caddy_version="0.10.14" architecture="arm7"
 
 ARG plugins=http.git
 ARG architecture=arm7

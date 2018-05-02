@@ -7,7 +7,7 @@ A [Docker](http://docker.com) image for [Caddy](http://caddyserver.com) that wil
 - [Deft.Work my personal blog](http://deft.work)
 
 ## Enhancements
-- Upgraded Caddy version to 0.10.12
+- Upgraded Caddy version to 0.10.14
 - [Return to original base image Alpine 3.7](https://hub.docker.com/r/_/alpine/)
 
 ## Getting Started
