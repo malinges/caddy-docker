@@ -3,7 +3,7 @@ LABEL mantainer="Eloy Lopez <elswork@gmail.com>"
 
 LABEL caddy_version="0.11.0" architecture="arm7"
 
-ARG plugins=http.git
+ARG plugins=http.cors,http.nobots,tls.dns.gandiv5
 ARG architecture=arm7
 
 RUN apk add --no-cache openssh-client git tar curl
